@@ -25,7 +25,7 @@ function DeckForm({ formData, handleSubmit, setFormData,cancelHandler }) {
     <textarea 
      name="description"
      type="text"
-     placeholder="Name of Deck"
+     placeholder="Description"
      id="name"
      value={formData.description}
      onChange={changeHandler}

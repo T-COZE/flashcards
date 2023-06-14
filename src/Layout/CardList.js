@@ -10,7 +10,7 @@ function CardList({deck, }){
         <div>{card.front}</div>
         <div>{card.back}</div>
         <div className="buttons d-flex justify-content-end">
-            <Link to='/decks/${deck.id}/cards/edit'>
+            <Link to='/decks/${deck.id}/cards/${card.id}/edit'>
                 <button type="button" className="btn btn-secondary" >Edit</button>
             </Link>
             <button type="button" className="btn btn-danger" >delete</button>
