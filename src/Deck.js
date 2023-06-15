@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { readDeck, deleteDeck} from "./utils/api";
-import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, useParams, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import CardList from "./CardList";
 
 function Deck({ data }) {
@@ -11,7 +11,15 @@ function Deck({ data }) {
     const intId = Number(deckId);
     readDeck(intId).then((data) => setDeck(data));
   }, [deckId]);
-  console.log(deck);
+  const history = useHistory();
+  const deleteHandler = async () => {
+      const result = window.confirm("Delete this deck? You will not be able to recover it.");
+      if (result) {
+        await deleteDeck(deck.id);
+        history.push("/");
+        history.go(0);
+      }
+    };
 
   return (
     
@@ -50,15 +58,15 @@ function Deck({ data }) {
             + Add Card
           </button>
         </Link>
-        <button type="button" className="btn btn-danger">Delete</button>
+        <button onClick={deleteHandler} type="button" className="btn btn-danger">Delete</button>
       </div>
       </div>
       <h2>Cards</h2>
-      {/* {deck.cards.map((card, index)=> */}
+      
       <div>
         <CardList deck={deck} />
       </div>
-      {/* )} */}
+      
     </div>
   );
 }

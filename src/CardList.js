@@ -1,8 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-
+import React from "react";
+import { Link, useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { deleteCard } from "./utils/api";
 
 function CardList({deck, }){
+    const {cardId}=useParams()
+    const history= useHistory();
+    const deleteHandler = async () => {
+        const result = window.confirm("Delete this card?");
+        if (result) {
+            await deleteCard(cardId);
+            history.push("/");
+        }
+    }
    return(
     <main >
         {deck.cards.map((card, index)=>(
@@ -13,7 +22,7 @@ function CardList({deck, }){
             <Link to={`/decks/${deck.id}/cards/${card.id}/edit`}>
                 <button type="button" className="btn btn-secondary" >Edit</button>
             </Link>
-            <button type="button" className="btn btn-danger" >delete</button>
+            <button onClick={deleteHandler} type="button" className="btn btn-danger" >delete</button>
         </div>
         </div>
         ))}
