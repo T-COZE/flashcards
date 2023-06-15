@@ -8,13 +8,12 @@ import Study from "./Study";
 import Deck from "./Deck";
 import CreateDeck from "./CreateDeck";
 import EditCard from "./EditCard";
+import { Route, Switch,  } from "react-router-dom";
 
-import { Route, Switch, useParams, useRouteMatch } from "react-router-dom";
-import NotEnoughCards from "./NotEnoughCards";
 
 function Layout() {
-  const { path } = useRouteMatch();
-  const { deckId, cardId } = useParams();
+  
+  
 
   return (
     <>
