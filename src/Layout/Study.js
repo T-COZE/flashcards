@@ -9,7 +9,7 @@ function Study(){
     const [deck, setDeck]=useState({})
 
 
-    useEffect(() => readDeck(deckId).then(setDeck), [deckId])
+    useEffect(() => {readDeck(deckId).then(setDeck)}, [deckId])
       
       if(deck===null || deck.cards === undefined){
         return <p>Loading...</p>;
