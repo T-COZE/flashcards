@@ -10,7 +10,6 @@
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
     }
-   
   ],
   "cards": [
     {
@@ -45,8 +44,8 @@
     },
     {
       "cards": [],
-      "front": "b",
-      "back": "b",
+      "front": "test edit",
+      "back": "test edit",
       "deckId": 1,
       "id": 7
     }

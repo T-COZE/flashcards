@@ -2,23 +2,31 @@ import React from "react";
 import Header from "./Header";
 import NotFound from "./NotFound";
 import Home from "./Home";
-
-import EditDeck from "./EditDeck";
+import AddCard from "./AddCard";
+import EditDeck from "../EditDeck";
 import Study from "./Study";
-import Deck from "./Deck";
-import CreateDeck from "./CreateDeck";
+import Deck from "../Deck";
+import CreateDeck from "../CreateDeck";
+import EditCard from "./EditCard";
 
 import { Route, Switch, useParams, useRouteMatch } from "react-router-dom";
+import NotEnoughCards from "./NotEnoughCards";
 
 function Layout() {
-  const { url, path } = useRouteMatch();
-  const { deckId } = useParams();
-  console.log(path);
+  const { path } = useRouteMatch();
+  const { deckId, cardId } = useParams();
+
   return (
     <>
       <Header />
       <div className="container">
         <Switch>
+          <Route path="/decks/:deckId/cards/:cardId/edit">
+            <EditCard />
+          </Route>
+          <Route path="/decks/:deckId/cards/new">
+            <AddCard />
+          </Route>
           <Route path="/decks/:deckId/edit">
             <EditDeck />
           </Route>

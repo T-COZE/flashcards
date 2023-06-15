@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { readDeck } from "../utils/api";
 import { useParams, Link } from "react-router-dom/cjs/react-router-dom.min";
-import Card from "./Card";
+import Card from "../Card";
 import NotEnoughCards from "./NotEnoughCards";
 
 function Study(){
@@ -16,7 +16,7 @@ function Study(){
       }
       const cardNum = deck.cards.length
       
-     return  cardNum < 3 ? (<NotEnoughCards deck = {deck} deckId = {deckId}/>)
+     return  cardNum < 3 ? <NotEnoughCards deck = {deck} deckId = {deckId}/>
       : (<Card deck={deck} deckId={deckId} />)
     }
       

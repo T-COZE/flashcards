@@ -5,7 +5,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 function DeckForm({ formData, handleSubmit, setFormData,cancelHandler }) {
   const changeHandler = ({ target }) => {
     setFormData({ ...formData, [target.name]: target.value });
-    console.log("something")
+    
   };
   console.log(formData.description)
   return(
