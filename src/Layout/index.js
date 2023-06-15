@@ -3,10 +3,10 @@ import Header from "./Header";
 import NotFound from "./NotFound";
 import Home from "./Home";
 import AddCard from "./AddCard";
-import EditDeck from "../EditDeck";
+import EditDeck from "./EditDeck";
 import Study from "./Study";
-import Deck from "../Deck";
-import CreateDeck from "../CreateDeck";
+import Deck from "./Deck";
+import CreateDeck from "./CreateDeck";
 import EditCard from "./EditCard";
 
 import { Route, Switch, useParams, useRouteMatch } from "react-router-dom";

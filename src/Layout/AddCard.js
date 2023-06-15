@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CardForm from "../CardForm";
+import CardForm from "./CardForm";
 import { createCard, readDeck } from "../utils/api";
 import {
   useParams,
@@ -51,9 +51,14 @@ function AddCard() {
         setFormData={setFormData}
         formData={formData}
       />
-       <button onClick={createHandler}type="button" className="btn btn-primary"> Save</button>
-       
-       <button onClick={doneHandler}type="button" className="btn btn-secondary">Done</button>
+      <button onClick={createHandler} type="button" className="btn btn-primary">
+        {" "}
+        Save
+      </button>
+
+      <button onClick={doneHandler} type="button" className="btn btn-secondary">
+        Done
+      </button>
     </div>
   );
 }

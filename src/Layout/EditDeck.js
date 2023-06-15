@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { readDeck, updateDeck } from "./utils/api";
+import { readDeck, updateDeck } from "../utils/api";
 import DeckForm from "./DeckForm";
 import { useState } from "react";
 import {
   useHistory,
   useParams,
-  Link
+  Link,
 } from "react-router-dom/cjs/react-router-dom.min";
 
 function EditDeck() {
@@ -31,19 +31,17 @@ function EditDeck() {
 
   return (
     <div>
-       <nav label="breadcrumb">
-      <ol className="breadcrumb">
-        <li className="breadcrumb-item">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="breadcrumb-item">
-          <Link to={`/decks/${deckId}`}>{deck.name}</Link>
-        </li>
-        <li className="breadcrumb-item active" >
-          Edit Deck
-        </li>
-      </ol>
-    </nav>
+      <nav label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="breadcrumb-item">
+            <Link to={`/decks/${deckId}`}>{deck.name}</Link>
+          </li>
+          <li className="breadcrumb-item active">Edit Deck</li>
+        </ol>
+      </nav>
       <h2>Edit Deck</h2>
       <DeckForm
         formData={formData}

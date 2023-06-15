@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DeckForm from "./DeckForm";
 import { useHistory, Link } from "react-router-dom/cjs/react-router-dom.min";
-import { createDeck } from "./utils/api";
+import { createDeck } from "../utils/api";
 
 function CreateDeck() {
   const history = useHistory();

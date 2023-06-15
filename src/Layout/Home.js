@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { listDecks } from "../utils/api";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import FormatDeck from "../FormatDeck";
+import FormatDeck from "./FormatDeck";
 
 function Home() {
   const [allDecks, setAllDecks] = useState([]);
