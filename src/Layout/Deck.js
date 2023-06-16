@@ -7,7 +7,7 @@ import {
 } from "react-router-dom/cjs/react-router-dom.min";
 import CardList from "./CardList";
 
-function Deck({ data }) {
+function Deck() {
   const [deck, setDeck] = useState({ cards: [] });
   const { deckId } = useParams();
 
