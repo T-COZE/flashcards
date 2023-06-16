@@ -9,7 +9,7 @@ import { deleteCard } from "../utils/api";
 function CardList({ deck }) {
   const { cardId } = useParams();
   const history = useHistory();
-  const deleteHandler = async () => {
+  const deleteHandler = async (cardId) => {
     const result = window.confirm("Delete this card?");
     if (result) {
       await deleteCard(cardId);
@@ -29,7 +29,7 @@ function CardList({ deck }) {
               </button>
             </Link>
             <button
-              onClick={deleteHandler}
+              onClick={()=>deleteHandler(card.id)}
               type="button"
               className="btn btn-danger"
             >

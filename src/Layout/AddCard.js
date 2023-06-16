@@ -22,7 +22,7 @@ function AddCard() {
 
   const createHandler = (e) => {
     e.preventDefault();
-    createCard(formData).then((data) =>
+    createCard(deckId,formData).then((data) =>
       history.push(`/decks/${deck.id}/${data.id}`)
     );
     setFormData({ ...initialFormData });

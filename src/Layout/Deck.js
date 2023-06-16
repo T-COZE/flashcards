@@ -23,7 +23,7 @@ function Deck() {
     if (result) {
       await deleteDeck(deck.id);
       history.push("/");
-      history.go(0);
+     
     }
   };
 
