@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
-
-function FormatDeck({ deck }) {
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { deleteDeck } from "../utils/api";
+function FormatDeck({ deck, deleteHandler }) {
+  const history = useHistory()
   return (
     <div className="card">
       <header  className="d-flex justify-content-between" style={{ fontSize: "36px" }}>{deck.name}
@@ -15,7 +16,11 @@ function FormatDeck({ deck }) {
         <Link to={`/decks/${deck.id}/study`}>
           <button type="button "className="btn  btn-primary">Study</button>
         </Link>
-        <button type = "button" className="btn btn-danger ">delete</button>
+         <button
+            onClick={()=>deleteDeck(deck.id).then(history.push("/"))}
+            type="button"
+            className="btn btn-danger"
+          >delete</button>
       </div >
     </div>
   );
