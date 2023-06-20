@@ -4,8 +4,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import FormatDeck from "./FormatDeck";
 
 function Home() {
-  const [allDecks, setAllDecks] = useState([]);
-
+    const [allDecks, setAllDecks] = useState([]);
+    
   useEffect(() => {
     const abortController = new AbortController();
     listDecks()
