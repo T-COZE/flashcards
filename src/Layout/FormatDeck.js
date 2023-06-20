@@ -4,7 +4,7 @@ import { deleteDeck } from "../utils/api";
 function FormatDeck({ deck, }) {
   const history = useHistory()
   const deleteHandler = async (deck) => {
-    const result = window.confirm("Delete this card?");
+    const result = window.confirm("Delete this deck?");
     if (result) {
       await deleteDeck(deck.id);
             window.location.pathname === '/' ? window.location.reload() : history.push('/')
